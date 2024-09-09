@@ -54,7 +54,7 @@ const loginSchema = Joi.object({
   
       const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
   
-      res.status(200).json({ mensaje: 'Inicio de sesión exitoso', token });
+      res.status(200).json({ mensaje: 'Inicio de sesión exitoso', token, username: user.username, role: user.role, userId: user._id });
     } catch (error) {
       res.status(500).json({ error: 'Error del servidor' });
     }
