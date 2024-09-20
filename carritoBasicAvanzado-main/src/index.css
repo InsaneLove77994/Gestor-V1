@@ -1,4 +1,3 @@
-/* Reset de estilos básicos */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,25 +5,14 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Header */
 .header {
-  background-color: #003366; /* Azul oscuro */
+  background-color: #333;
   color: #fff;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-}
-
-.header-logo {
-  height: 50px; /* Ajusta la altura según sea necesario */
-  margin-right: 1rem;
 }
 
 .header h1 {
@@ -38,7 +26,6 @@ body {
   font-weight: bold;
 }
 
-/* Productos */
 .product-list {
   display: flex;
   justify-content: space-around;
@@ -74,7 +61,6 @@ body {
   margin: 0.5rem 0;
 }
 
-/* Controles de cantidad */
 .quantity-controls {
   display: flex;
   justify-content: center;
@@ -93,9 +79,8 @@ body {
   margin: 0 1rem;
 }
 
-/* Botón de agregar producto */
 .product button {
-  background-color: #003366; /* Azul oscuro */
+  background-color: #343a40;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -105,10 +90,9 @@ body {
 }
 
 .product button:hover {
-  background-color: #002244; /* Azul más oscuro */
+  background-color: #23272b;
 }
 
-/* Menú del carrito */
 .cart-menu {
   position: fixed;
   right: 0;
@@ -154,7 +138,6 @@ body {
   font-weight: bold;
 }
 
-/* Controles de cantidad en el carrito */
 .cart-menu .quantity-controls {
   display: flex;
   align-items: center;
@@ -164,20 +147,17 @@ body {
   margin: 0 0.5rem;
 }
 
-/* Botón para eliminar producto */
 .cart-menu .remove-button {
   margin-left: 1rem;
-  background-color: #dc3545; /* Rojo */
+  background-color: #dc3545;
   color: #fff;
 }
 
-/* Total del carrito */
 .cart-total {
   margin-top: 1rem;
   font-size: 1.2rem;
 }
 
-/* Acciones del carrito */
 .cart-menu-actions {
   display: flex;
   justify-content: space-between;
@@ -185,7 +165,7 @@ body {
 }
 
 .cart-menu-actions button, .cart-menu-actions a {
-  background-color: #003366; /* Azul oscuro */
+  background-color: #343a40;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -197,10 +177,9 @@ body {
 }
 
 .cart-menu-actions button:hover, .cart-menu-actions a:hover {
-  background-color: #002244; /* Azul más oscuro */
+  background-color: #23272b;
 }
 
-/* Estilos para las diferentes páginas */
 .cart-page, .login-page, .payment-form, .invoice-page {
   padding: 2rem;
 }
@@ -209,8 +188,7 @@ body {
   margin-top: 0;
 }
 
-/* Listas de productos en el carrito */
-.cart-page ul, .cart-page li {
+.cart-page ul {
   list-style: none;
   padding: 0;
 }
@@ -221,6 +199,11 @@ body {
   align-items: center;
   padding: 0.5rem 0;
   border-bottom: 1px solid #ddd;
+}
+
+.cart-page .quantity-controls {
+  display: flex;
+  align-items: center;
 }
 
 .cart-page .quantity-controls button {
@@ -239,12 +222,20 @@ body {
 }
 
 .cart-page .cart-menu-actions a {
-  background-color: #003366;
+  background-color: #343a40;
   color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center;
   border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
-/* Login y formularios */
+.cart-page .cart-menu-actions a:hover {
+  background-color: #23272b;
+}
+
 .login-page form div, .payment-form form div {
   margin-bottom: 1rem;
 }
@@ -261,7 +252,11 @@ body {
   border-radius: 4px;
 }
 
-/* Modal de producto */
+.invoice-page p {
+  margin: 1rem 0;
+}
+
+/* Estilos para el modalProducto */
 .modalProducto-overlay {
   position: fixed;
   top: 0;
@@ -279,9 +274,11 @@ body {
   background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 400px;
   max-width: 100%;
   position: relative;
+  z-index: 1001;
 }
 
 .modalProducto h2 {
@@ -290,6 +287,8 @@ body {
 }
 
 .modalProducto form label {
+  display: block;
+  margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
@@ -302,52 +301,171 @@ body {
 }
 
 .modalProducto button {
-  background-color: #003366;
+  background-color: #343a40;
   color: #fff;
-  border-radius: 4px;
+  border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
 }
 
 .modalProducto button:hover {
-  background-color: #002244;
+  background-color: #23272b;
 }
 
 .modalProducto-close {
   position: absolute;
   top: 10px;
   right: 10px;
+  background: none;
+  border: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* Mensajes de éxito y error */
+/* Estilos para los mensajes de éxito y error */
 .error-message {
   color: #dc3545;
+  margin-bottom: 1rem;
   font-weight: bold;
   text-align: center;
 }
 
 .success-message {
   color: #28a745;
+  margin-bottom: 1rem;
   font-weight: bold;
   text-align: center;
 }
 
-/* Gestión de productos */
+/* Estilos para la gestión de productos en tabla */
 .gestionProductos {
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
-/* Pedidos */
+.gestionProductos h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.gestionProductos button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+}
+
+.gestionProductos button:hover {
+  background-color: #0056b3;
+}
+
+.gestionProductos form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.gestionProductos form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.gestionProductos form button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.gestionProductos form button:hover {
+  background-color: #218838;
+}
+
+.tablaProductos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tablaProductos th, .tablaProductos td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tablaProductos th {
+  background-color: #06529e;
+  color: #fff;
+}
+
+.tablaProductos td img {
+  border-radius: 8px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.tablaProductos td button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-left: 0.5rem;
+}
+
+.tablaProductos td button:hover {
+  background-color: #c82333;
+}
+
+.tablaProductos .edit-button {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.tablaProductos .edit-button:hover {
+  background-color: #e0a800;
+}
+
+.error-message, .success-message {
+  text-align: center;
+  font-weight: bold
+}
+
+
+
+/***************Estilos componente Pedidos.jsx *********************/
+
+/* Contenedor principal de los pedidos */
 .pedidos-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
+/* Tarjeta individual de cada pedido */
 .pedido-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -355,19 +473,305 @@ body {
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
+.pedido-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Encabezado y pie de la tarjeta de pedido */
 .pedido-header, .pedido-footer {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.pedido-header p, .pedido-footer p {
-  margin: 6px 0;
+/* Párrafos dentro del encabezado, pie y cuerpo de la tarjeta de pedido */
+.pedido-header p, .pedido-footer p, .pedido-body p {
+  margin: 6px 0; /* Incrementado el margen para mayor separación */
   font-size: 14px;
 }
 
-.pedido-body h3 {
-  margin: 0 0 10px;
+/* Títulos dentro del cuerpo y pie de la tarjeta de pedido */
+.pedido-body h3, .pedido-footer h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
   font-size: 18px;
-  color
+  color: #333;
+}
+
+/* Elemento individual de producto dentro de la tarjeta de pedido */
+.pedido-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Párrafos dentro de los detalles del producto */
+.item-details p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* Título principal de la página de pedidos */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo para texto en negrita */
+p strong {
+  color: #555;
+}
+
+/* Clase general para el estado del pedido */
+.estado {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.estado.pendiente {
+  color: #d9534f;
+  background-color: #f2dede;
+}
+
+.estado.pagado {
+  color: #5cb85c;
+  background-color: #dff0d8;
+}
+
+.estado.enviado {
+  color: #5bc0de;
+  background-color: #d9edf7;
+}
+
+/**************************************************************/
+/***************Estilos componente MangeOrders y ModalOrders.jsx *********************/
+/* Estilos generales para el contenedor principal */
+.gestionar-pedidos-contenedor {
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+/* Estilos para la barra de búsqueda */
+.buscar-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+/* Estilos para la lista de pedidos */
+.pedidos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Añade un espacio entre las tarjetas */
+  justify-content: center;
+}
+/* Estilos para cada tarjeta de pedido */
+.pedido-tarjeta {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(28% - 20px); /* Ajusta el ancho de la tarjeta */
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.pedido-tarjeta:hover {
+  transform: translateY(-5px);
+  background-color: #f9f9f9; /* Un gris muy claro */
+}
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .pedido-tarjeta {
+    width: 100%; /* Ancho completo para dispositivos móviles */
+  }
+}
+/***** Estilos para el modal: ModalOrders.jsx *****/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Estilos para el contenido del modal */
+.modal-contenido {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+}
+/* Estilos para el botón de cerrar */
+.cerrar-boton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #000000; /* Color de fondo negro */
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff; /* Color de texto blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  width: 40px; /* Ancho del botón */
+  height: 30px; /* Alto del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Transición suave para la transformación */
+}
+.cerrar-boton:hover {
+  transform: scale(1.2); /* Agrandar el botón */
+}
+/* Estilos para el encabezado del modal */
+.modal-contenido h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+/* Estilos para las filas del formulario */
+.form-fila {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+/* Estilos para las columnas del formulario */
+.form-columna {
+  flex: 1;
+  min-width: 150px;
+}
+.form-columna label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.form-columna input,
+.form-columna select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+/* Estilos para la fila de botones */
+.boton-fila {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.boton-fila button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.boton-fila button:first-of-type {
+  background-color: #28a745;
+  color: #fff;
+}
+.boton-fila button:nth-of-type(2) {
+  background-color: #dc3545;
+  color: #fff;
+}
+.boton-fila button:hover {
+  opacity: 0.9;
+}
+/* Estilos para el estado */
+.estado {
+  font-weight: bold;
+}
+.estado-pendiente {
+  color: #ffa500; /* Color naranja */
+}
+.estado-pagado {
+  color: #008000; /* Color verde */
+}
+.estado-enviado {
+  color: #0000ff; /* Color azul */
+}
+/**** Estilos para el modal de confirmación, del ModalOrders.jsx ****/
+.modal-confirmacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-contenido-confirmacion {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+}
+.confirmacion-logo {
+  font-size: 50px;
+  color: #dc3545;
+  margin-bottom: 20px;
+}
+.confirmacion-mensaje {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.boton-confirmacion-fila {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.boton-confirmacion-fila button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.boton-confirmacion-fila button:first-of-type {
+  background-color: #28a745;
+  color: #fff;
+}
+.boton-confirmacion-fila button:nth-of-type(2) {
+  background-color: #dc3545;
+  color: #fff;
+}
+.boton-confirmacion-fila button:hover {
+  opacity: 0.9;
+}
+/****************************************************************************/
