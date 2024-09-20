@@ -66,3 +66,16 @@ exports.eliminarPedido = async (req, res, next) => {
         next();
     }
 };
+
+// Muestra todos los pedidos de un cliente específico
+exports.mostrarPedidosCliente = async (req, res, next) => {
+    try {
+        const pedidos = await Pedido.find({ cliente: req.params.idCliente })
+            .populate('cliente', '-password')
+            .populate('pedido.producto');
+        res.json(pedidos);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+};
