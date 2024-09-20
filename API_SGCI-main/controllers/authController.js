@@ -54,7 +54,7 @@ const loginSchema = Joi.object({
   
       const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
   
-      res.status(200).json({ mensaje: 'Inicio de sesión exitoso', token, username: user.username, role: user.role, userId: user._id });
+      res.status(200).json({ mensaje: 'Inicio de sesión exitoso', token, username: user.username, role: user.role, userId: user._id, email: user.email });
     } catch (error) {
       res.status(500).json({ error: 'Error del servidor' });
     }
@@ -74,6 +74,15 @@ const loginSchema = Joi.object({
     const updates = req.body;
   
     try {
+
+      // Validar si el nuevo email ya está en uso
+      if (updates.email) {
+        const existingUser = await User.findOne({ email: updates.email });
+        if (existingUser && existingUser._id.toString() !== req.user.userId) {
+          return res.status(400).json({ error: 'El email ya está en uso, usar otro' }); // Línea agregada
+        }
+      }
+      
       if (updates.password) {
         updates.password = await bcrypt.hash(updates.password, 10);
       }

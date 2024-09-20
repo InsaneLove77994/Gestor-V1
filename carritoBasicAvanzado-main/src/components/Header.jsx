@@ -51,13 +51,13 @@ const Header = ({ cartCount }) => {
         <Link to="/cart">Carrito ({cartCount})</Link>
         <Link to="/sales-report">Reporte de Ventas</Link>
         {/* Enlace a la gestión de productos solo visible para usuarios con rol de administrador */}
-        {user.role === 'admin' && <Link to="/manage-products">Gestionar</Link>}
-        {user.role === 'admin' && <Link to="/manage-orders">G. Pedidos</Link>} {/* Link a la gestión de pedidos */}
+        {user.role === 'admin' && <Link to="/manage-products">G.Productos</Link>}
+        {user.role === 'admin' && <Link to="/manage-orders">G.Pedidos</Link>} {/* Link a la gestión de pedidos */}
         {user.username ? (
           <>
            <Link to="/pedidos">Mis Pedidos</Link> {/* Enlace a los pedidos */}
             {/* Mensaje de bienvenida y enlace para cerrar sesión */}
-            <span>Bienvenido, {user.username} ({user.role})</span>
+            <span>  <Link to="/update-user">Bienvenido, {user.username} ({user.role})</Link></span>
             <Link to="/" onClick={handleLogout}>Cerrar S.</Link>
           </>
         ) : (

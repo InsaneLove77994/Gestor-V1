@@ -14,6 +14,7 @@ import Login from './components/Login'; // Importar el componente Login
 import ManageProducts from './components/ManageProducts'; // Importar el componente ManageProducts
 import Pedidos from './components/Pedidos'; //importamos el modulo pedidos aca
 import ManageOrders from './components/ManageOrders'; // Importar componente de gestión de pedidos
+import UpdateUser from './components/UpdateUser'; // Importar el componente de actualización de usuario
 
 // Datos iniciales para productos (vacío al principio)
 const initialProducts = [];
@@ -159,6 +160,7 @@ const App = () => {
         <Route path="/manage-products" element={<PrivateRoute><ManageProducts /></PrivateRoute>} />
         <Route path="/pedidos" element={<Pedidos />} /> {/* Nueva ruta para el componente Pedidos */}
         <Route path="/manage-orders" element={<PrivateRoute><ManageOrders /></PrivateRoute>} /> {/* Ruta para gestionar pedidos */}
+        <Route path="/update-user" element={<UpdateUser />} /> {/* Nueva ruta para actualizar el usuario */}
         
       </Routes>
 
